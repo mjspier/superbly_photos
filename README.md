@@ -15,10 +15,10 @@ place index.php in root folder.
 
 example:
 
-- index.php
-  - albums
-    -album1
-        - image1.jpg
-        - image2.jpg
+* index.php
+* albums
+    * album1
+        * image1.jpg
+        * image2.jpg
 
 if you want to change the root album folder name change the var albumdir in the index.php file.
