@@ -24,17 +24,17 @@ function echoAlbums($dir){
 			return;
 		}
 		if($handle = opendir($dir)){
-			echo "<ul>";
 			while(false !== ($entry = readdir($handle))){
 				if(in_array($entry,$ignoreDirs))
 					continue;
 				$album = $dir.'/'.$entry;
 				if(is_dir($album)){
+                    echo "<ul>";
 					echo "<li><a href=\"?dir=$album\">$entry</a></li>";
 					echoAlbums($album);
+                    echo "</ul>";
 				}
 			}
-			echo "</ul>";
 		}
 	}
 }
@@ -116,7 +116,7 @@ function echoImages($dir){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PTV05 Gallery</title>
+		<title>Superbly Photos</title>
 		<style type="text/css">
 			body{
 				font-family: Georgia,"Times new Roman",Helvetica,sans-serif;
@@ -152,6 +152,7 @@ function echoImages($dir){
 			#nav {
 				float:left;
 				margin: 10px;
+                padding: 10px;
 				width:200px;
 				height: 100%;
 				background-color: #bbcee4;
@@ -159,10 +160,19 @@ function echoImages($dir){
 			}
 			#nav ul{
 				list-style-type: none;
+                border-left: solid 1px #7aa9e3;
+                margin: 0;
+                padding: 0;
+                margin-left: 10px;
 			}
+            #nav ul li{
+                padding-top: 10px;
+            }
 			#nav a{
+                padding-left:10px;
 				text-decoration:none;
 				color: #447abc;
+                border-bottom: solid 1px #7aa9e3;
 			}
 			#nav a:hover{
 				color: #FFFFFF;	
