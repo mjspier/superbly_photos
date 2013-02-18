@@ -1,14 +1,11 @@
 <?php
 /*!
- * superbly tagfield v0.1
+ * superbly photos
  * http://www.superbly.ch
  * 
- * Copyright 2011, Manuel Spierenburg
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://www.superbly.ch/licenses/mit-license.txt
- * http://www.superbly.ch/licenses/gpl-2.0.txt
- *
- * Date: 07-02-2013
+ * Copyright (C) 2013, Manuel Spierenburg (manuel@spierenburg.ch)
+ * Licenced under GNU General Publi License, Version 3.0
+ * http://www.gnu.org/licenses/gpl-3.0-standalone.html
  */ 
 
 // config
