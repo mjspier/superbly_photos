@@ -13,16 +13,17 @@ $albumdir = './albums';
 
 //error_reporting(0);
 ini_set('memory_limit','512M');
+$ignoreDirs = array('.','..','.cache');
 
 function echoAlbums($dir){
-	$ignoreDirs = array('.','..','.cache');
+	global $ignoreDirs;
 	if(is_dir($dir)){
 		if(in_array($dir,$ignoreDirs)){
 			return;
 		}
-		if($handle = opendir($dir)){
-			while(false !== ($entry = readdir($handle))){
-				if(in_array($entry,$ignoreDirs))
+        if(false !== ($entries = scandir($dir))){
+            foreach($entries as $entry){
+                if(in_array($entry,$ignoreDirs))
 					continue;
 				$album = $dir.'/'.$entry;
 				if(is_dir($album)){
@@ -37,9 +38,12 @@ function echoAlbums($dir){
 }
 
 function echoImages($dir){
-	if($handle = opendir($dir)){
+	global $ignoreDirs;
+    if(false !== ($entries = scandir($dir))){
 		echo "<ul class=\"media-grid\">";
-		while(false !== ($entry = readdir($handle))){
+        foreach($entries as $entry){
+            if(in_array($entry,$ignoreDirs))
+               continue; 
 			$img = $dir.'/'.$entry;
 			if(!is_dir($img)){
 				echo "<li><a href=\"$img\"><img src=\"".resize($img,100,100,false)."\" alt=\"\"></a></li>";
