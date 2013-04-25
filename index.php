@@ -159,6 +159,7 @@ function echoImages($dir){
 				height: 100%;
 				background-color: #bbcee4;
 				border: solid 1px #7aa9e3;
+				max-width: 27%;
 			}
 			#nav ul{
 				list-style-type: none;
@@ -182,6 +183,7 @@ function echoImages($dir){
 			#gallery {
 				float: left;
 				margin: 10px;
+				max-width: 73%;
 			}
 			#gallery ul{
 				list-style-type: none;
