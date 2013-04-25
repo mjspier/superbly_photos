@@ -118,6 +118,7 @@ function echoImages($dir){
 <html>
 	<head>
 		<title>Superbly Photos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style type="text/css">
 			body{
 				font-family: Georgia,"Times new Roman",Helvetica,sans-serif;
@@ -179,8 +180,8 @@ function echoImages($dir){
 				color: #FFFFFF;	
 			}
 			#gallery {
+				float: left;
 				margin: 10px;
-				margin-left: 250px;
 			}
 			#gallery ul{
 				list-style-type: none;
